@@ -30,7 +30,19 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}.`);
 });
 
-  
+  client.on('message', async(message) => {
+    if(message.content === prefix+'펑') {
+        if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('당신은 권한이 없습니다.')
+        const embed = new Discord.MessageEmbed()
+      .setDescription("펑!")
+      .setImage("https://media.giphy.com/media/HhTXt43pk1I1W/giphy.gif")
+      .setColor("RANDOM")
+      message.channel.delete();
+      message.channel.clone().then(channel => {
+        channel.send(embed)
+      })
+    }
+});
 client.on('messageCreate', msg => {
 
     try { 
