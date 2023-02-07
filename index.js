@@ -41,7 +41,7 @@ client.on('messageCreate', msg => {
         if(msg.content === process.env.PREFIX + 'help') {
             const embed = new Discord.MessageEmbed()
             .setTitle("도움말")
-            .setColor('cyn') 
+            .setColor('sky') 
             .setDescription('디스코드봇 테스트입니다.');
 
             msg.reply({ embeds: [embed] })
